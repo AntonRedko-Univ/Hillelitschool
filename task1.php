@@ -1,11 +1,20 @@
 <?php
-$counter = 0;
-$testarray = array(22, 23, 24, 25, 26, 27, 28, 29, 30);
-$a = count($testarray);
-for($i = 0; $i < $a; $i++){
-    if(!($i % 2 == 0)) {
-        $counter = $testarray[$i] + $counter;
-    }
-}
-echo $counter;
 
+$input = array(0, 2, 4, 1, 0, array(0, 3, 0, 6, 0, 7), 4, 0, 0, 4, array(5, 2, 6, 5, 2));
+$sum = 0;
+foreach ($input as $key => $value){
+
+    if($key == 1){
+        $sum = $sum + $value;
+    }
+    if(is_array($value)){
+        foreach($value as $key1 => $value1){
+            if($key1 == 1){
+                $sum = $sum + $value1;
+            }
+        }
+    }
+
+}
+
+echo $sum;
