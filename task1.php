@@ -16,5 +16,4 @@ foreach ($input as $key => $value){
     }
 
 }
-
 echo $sum;
