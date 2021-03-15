@@ -1,10 +1,10 @@
 <?php
 
-$string = 'axe топор';
+$string = 'Execute Выполнить';
 $matches = array();
 $res = array();
 
-    preg_match_all('/[a-z]+?/u',  $string, $matches);
+    preg_match_all('/[a-z, A-Z]+?/u',  $string, $matches);
     foreach ($matches[0] as $match) {
         $res[$match] = isset($res[$match]) ? ++$res[$match] : 1;
     }
