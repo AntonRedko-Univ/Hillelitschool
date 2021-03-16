@@ -3,9 +3,9 @@
 // ЗАПИСЬ //
 
 $list = array (
-    array('aaa', 'bbb', 'ccc', 'dddd'),
-    array('123', '456', '789'),
-    array('"aaa"', '"bbb"')
+    array('id', 'login', 'password'),
+    array('1', 'ggg', 'hhh'),
+    array('"2"', '"1234"', '"5678"')
 );
 $fp = fopen('file.csv', 'w');
 foreach ($list as $fields) {
