@@ -1,22 +1,25 @@
 <?php
 
+// ЗАПИСЬ //
 
-$array = array(0, 1, 2, array(4, 5, array(7, 8, array(3, 4, 5, array(3, 2, 6)))));
-
-function sumArr($arr)
-{
-    $i = 1;
-    $sum = 0;
-    foreach ($arr as $v) {
-
-        if (is_array($v)) {
-            $sum += sumArr($v);
-        } elseif ($i == 2) {
-            $sum = $v + $sum;
-        }
-        $i++;
-    }
-    return $sum;
+$list = array (
+    array('aaa', 'bbb', 'ccc', 'dddd'),
+    array('123', '456', '789'),
+    array('"aaa"', '"bbb"')
+);
+$fp = fopen('file.csv', 'w');
+foreach ($list as $fields) {
+    fputcsv($fp, $fields, ';', '"');
 }
+fclose($fp);
 
-echo sumArr($array);
+// СЧИТЫВАНИЕ //
+
+if (($fp = fopen("file.csv", "r")) !== FALSE) {
+    while (($data = fgetcsv($fp, 0, ";")) !== FALSE) {
+        $list[] = $data;
+    }
+    fclose($fp);
+    print_r($list);
+}
+?>
