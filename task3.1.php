@@ -11,7 +11,7 @@ class AnimalFactory
         };
         $cat = function () use ($type){
             if ($type == 'cat'){
-                return new Car();
+                return new Cat();
             }
         };
     }
