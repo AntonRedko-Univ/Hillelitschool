@@ -5,7 +5,7 @@
 $list = array (
     array('id', 'login', 'password'),
     array('1', 'ggg', 'hhh'),
-    array('"2"', '"1234"', '"5678"')
+    array('2', '1234', '5678')
 );
 $fp = fopen('file.csv', 'w');
 foreach ($list as $fields) {
